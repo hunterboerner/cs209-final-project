@@ -4,17 +4,27 @@ using UnityEngine;
 
 public class CameraBehavior : MonoBehaviour
 {
-    public Vector3 camOffset = new Vector3(0f, 1.2f, -2.6f);
-    private Transform target;
-    
+    // Following https://www.youtube.com/watch?v=_QajrabyTJc
+    public float mouseSensitivity = 100f;
+    public Transform playerBody;
+    float xRotation = 0f;
+
     void Start()
     {
-        target = GameObject.Find("Marble").transform; 
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    void Update()
+    {
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        xRotation -= mouseY;
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        playerBody.Rotate(Vector3.up * mouseX);
     }
 
     void LateUpdate()
     {
-        this.transform.position = target.TransformPoint(camOffset);
-        this.transform.LookAt(target); 
     }
 }
