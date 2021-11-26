@@ -824,7 +824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 543ad283c8afc4bc1abceab11b1e7e6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
+  controller: {fileID: 781588420}
   speed: 12
 --- !u!23 &1368806724
 MeshRenderer:
