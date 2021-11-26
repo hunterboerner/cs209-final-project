@@ -21,4 +21,9 @@ public class StoveBehavior : MonoBehaviour
     {
         isOn = true;
     }
+
+    public void TurnOffStove()
+    {
+      isOn = false;
+    }
 }
