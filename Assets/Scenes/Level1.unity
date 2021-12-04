@@ -549,7 +549,7 @@ GameObject:
   - component: {fileID: 616441259}
   - component: {fileID: 616441258}
   - component: {fileID: 616441262}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fridge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5703,7 +5703,7 @@ GameObject:
   - component: {fileID: 882859787}
   - component: {fileID: 882859786}
   - component: {fileID: 882859785}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sink
   m_TagString: Untagged
   m_Icon: {fileID: 0}
