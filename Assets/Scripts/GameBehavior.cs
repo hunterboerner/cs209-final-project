@@ -49,7 +49,7 @@ public class GameBehavior : MonoBehaviour
 
     void RestartLevel()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Level1");
         Time.timeScale = 1.0f;
     }
 

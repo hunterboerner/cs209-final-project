@@ -6,6 +6,7 @@ public class StoveBehavior : MonoBehaviour
 {
   public bool isOn = false;
   public GameObject Fire;
+  public uint dirtyLevel = 0;
   // Start is called before the first frame update
   void Start()
   {
@@ -15,13 +16,21 @@ public class StoveBehavior : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
+    MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
+    meshRenderer.material.SetFloat("_Metallic", (10 - dirtyLevel) / 10);
+  }
 
+  public void CleanStove()
+  {
+    if (dirtyLevel != 0)
+      dirtyLevel--;
   }
 
   public void TurnOnStove()
   {
     isOn = true;
-    Fire.GetComponent<FireBehavior>().turnOn();
+    if (dirtyLevel > 5)
+      Fire.GetComponent<FireBehavior>().turnOn();
   }
 
   public void TurnOffStove()
