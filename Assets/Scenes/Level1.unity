@@ -5579,6 +5579,7 @@ GameObject:
   - component: {fileID: 781588422}
   - component: {fileID: 781588423}
   - component: {fileID: 781588424}
+  - component: {fileID: 781588426}
   - component: {fileID: 781588425}
   m_Layer: 0
   m_Name: PlayerGroup
@@ -5688,9 +5689,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 781588418}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fce688dc15b31420c9c52ea08c60287c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Camera: {fileID: 963194227}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  Inventory: {fileID: 781588418}
+--- !u!114 &781588426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781588418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29a63c495ee774336a60cef47de07e54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Camera: {fileID: 963194227}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &882859784
 GameObject:
   m_ObjectHideFlags: 0
@@ -5703,6 +5725,7 @@ GameObject:
   - component: {fileID: 882859787}
   - component: {fileID: 882859786}
   - component: {fileID: 882859785}
+  - component: {fileID: 882859789}
   m_Layer: 8
   m_Name: Sink
   m_TagString: Untagged
@@ -5787,6 +5810,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &882859789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882859784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 242897d7a820c4f0d99b4c0b3e444934, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &885845497
 GameObject:
   m_ObjectHideFlags: 0

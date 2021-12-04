@@ -23,8 +23,31 @@ public class InventoryBehavior : MonoBehaviour
     }
   }
 
-  bool cookEggs()
+  public void CleanItems()
   {
+    // TODO
+    if (Items.ContainsKey("DirtySpatula"))
+    {
+      Items["Spatula"] = 1;
+      Items.Remove("DirtySpatula");
+    }
+
+    if (Items.ContainsKey("DirtyBowl"))
+    {
+      Items["Bowl"] = 1;
+      Items.Remove("DirtyBowl");
+    }
+  }
+
+  public Dictionary<string, uint> GetItems()
+  {
+    return Items;
+  }
+
+  public bool cookEggs()
+  {
+    return true;
+    // TODO
     // returns true if have all the items needed for cooking eggs. Uses up the items.
   }
 
