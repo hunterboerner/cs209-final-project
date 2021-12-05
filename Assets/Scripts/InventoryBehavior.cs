@@ -17,6 +17,11 @@ public class InventoryBehavior : MonoBehaviour
     Items["Spatula"] = numSpatula;
   }
 
+  public void OnButtonPress()
+  {
+
+  }
+
   public void AddItem(string key)
   {
     if (Items.ContainsKey(key))

@@ -175,7 +175,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e6b1d0d31ae9647b2a21be4f0ddc3708, type: 2}
+  - {fileID: 2100000, guid: debb220e27846403eb88bca1f6dd27bd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -284,7 +284,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: debb220e27846403eb88bca1f6dd27bd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -474,7 +474,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: debb220e27846403eb88bca1f6dd27bd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5998,7 +5998,6 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 256
-  Inventory: {fileID: 0}
 --- !u!114 &1370616869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6112,7 +6111,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: debb220e27846403eb88bca1f6dd27bd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6341,7 +6340,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: debb220e27846403eb88bca1f6dd27bd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6500,6 +6499,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915cce55c2bcb4893838ecb6b202801b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numSpatula: 1
+  numEggs: 3
+  numBowl: 1
 --- !u!114 &1874968131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6516,7 +6518,6 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 0
-  Inventory: {fileID: 0}
 --- !u!114 &1874968132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6595,11 +6596,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae45baad21ed74571b13598c589f16bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Camera: {fileID: 0}
-  layerMask:
-    m_Bits: 0
-  guiText: 
-  timer: 0
 --- !u!1 &1984921850
 GameObject:
   m_ObjectHideFlags: 0
@@ -6710,7 +6706,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: debb220e27846403eb88bca1f6dd27bd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6805,7 +6801,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: debb220e27846403eb88bca1f6dd27bd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
