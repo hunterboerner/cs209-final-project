@@ -10,10 +10,12 @@ public class SinkInteractionBehavior : MonoBehaviour
   private string guiText;
   private int timer = 0;
   public GameObject Inventory;
+  public GameBehavior gameManager;
+
   // Start is called before the first frame update
   void Start()
   {
-
+    gameManager = GameObject.Find("GameManager").GetComponent<GameBehavior>();
   }
 
   // Update is called once per frame
@@ -27,8 +29,10 @@ public class SinkInteractionBehavior : MonoBehaviour
       SinkBehavior hitItem = hitInfo.collider.GetComponent<SinkBehavior>();
       if (hitItem != null)
       {
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKey(KeyCode.E)) {
           timer += 1;
+          gameManager.Level1Goal = true;
+        }
         else
           timer = 0;
 

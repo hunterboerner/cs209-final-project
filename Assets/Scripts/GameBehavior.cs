@@ -6,41 +6,22 @@ using UnityEngine.SceneManagement;
 
 public class GameBehavior : MonoBehaviour
 {
-    private int _goalsCollected = 0;
-    private int maxGoals = 3;
+    private bool sinkOn = false;
 
     public bool showWinScreen = false;
 
     public bool showLoseScreen = false;
 
-    public int Goals
+    public bool Level1Goal
     {
-        get { return _goalsCollected; }
+        get { return sinkOn; }
         set {
-            _goalsCollected = value;
-            Debug.LogFormat("Goals: {0}", _goalsCollected);
+            sinkOn = value;
+            Debug.LogFormat("SinkOn: {0}", sinkOn);
 
-            if (_goalsCollected >= maxGoals)
+            if (sinkOn)
             {
                 showWinScreen = true;
-
-                Time.timeScale = 0f;
-            }
-        }
-    }
-
-    private int _playerHP = 3;
-
-    public int HP
-    {
-        get { return _playerHP; }
-        set {
-            _playerHP = value;
-            Debug.LogFormat("Lives: {0}", _playerHP);
-
-            if (_playerHP <= 0)
-            {
-                showLoseScreen = true;
 
                 Time.timeScale = 0f;
             }
@@ -55,12 +36,8 @@ public class GameBehavior : MonoBehaviour
 
     void OnGUI()
     {
-        GUI.Box(new Rect(20, 20, 150, 25), "Player Health: " +
-            _playerHP);
-        GUI.Box(new Rect(20, 50, 150, 25), "Goals Collected: " +
-            _goalsCollected);
-        GUI.Box(new Rect(20, 75, 150, 25), (3 - _goalsCollected) + 
-            " goals remaining");
+        GUI.Box(new Rect(20, 20, 150, 25), "Sink turned on: " +
+            sinkOn);
 
         if (showWinScreen)
         {
