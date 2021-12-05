@@ -17,7 +17,7 @@ public class InventoryBehavior : MonoBehaviour
     Items["Spatula"] = numSpatula;
   }
 
-  void addItem(string key)
+  public void AddItem(string key)
   {
     if (Items.ContainsKey(key))
     {
@@ -29,9 +29,22 @@ public class InventoryBehavior : MonoBehaviour
     }
   }
 
+  public void RemoveItem(string key)
+  {
+    if (Items.ContainsKey(key))
+    {
+      if (Items[key] == 1)
+      {
+        Items.Remove(key);
+        return;
+      }
+
+      Items[key] = Items[key] - 1;
+    }
+  }
+
   public void CleanItems()
   {
-    // TODO
     if (Items.ContainsKey("DirtySpatula"))
     {
       Items["Spatula"] = 1;
@@ -50,11 +63,24 @@ public class InventoryBehavior : MonoBehaviour
     return Items;
   }
 
-  public bool cookEggs()
+  public bool CanCookEggs()
   {
-    return true;
-    // TODO
-    // returns true if have all the items needed for cooking eggs. Uses up the items.
+    return Items.ContainsKey("Eggs") && Items.ContainsKey("Spatula") && Items.ContainsKey("Bowl");
+  }
+
+  public bool CookEggs()
+  {
+    if (CanCookEggs())
+    {
+      RemoveItem("Spatula");
+      RemoveItem("Bowl");
+      RemoveItem("Eggs");
+      AddItem("DirtySpatula");
+      AddItem("DirtyBowl");
+      AddItem("CookedEggs");
+    }
+
+    return false;
   }
 
   // Update is called once per frame
@@ -67,7 +93,6 @@ public class InventoryBehavior : MonoBehaviour
   {
     int i = 1;
     GUI.Label(new Rect(20, 300, 150, 25), "Inventory");
-    Debug.LogFormat("Num items: {0}", Items.Count);
     foreach (KeyValuePair<string, uint> entry in Items)
     {
       Debug.Log("printing value");

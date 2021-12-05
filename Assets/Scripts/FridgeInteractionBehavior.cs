@@ -9,10 +9,11 @@ public class FridgeInteractionBehavior : MonoBehaviour
   public LayerMask layerMask;
   private string guiText;
   private int timer = 0;
+  private InventoryBehavior Inventory;
   // Start is called before the first frame update
   void Start()
   {
-
+    Inventory = GameObject.Find("PlayerGroupNew").GetComponent<InventoryBehavior>();
   }
 
   // Update is called once per frame
@@ -33,10 +34,10 @@ public class FridgeInteractionBehavior : MonoBehaviour
 
         if (timer == 200)
         {
-          // TODO Open the fridge inventory GUI
+          Inventory.AddItem("Eggs");
         }
 
-        guiText = "Hold E to open the fridge";
+        guiText = "Hold E to take items from fridge";
 
       }
       else
