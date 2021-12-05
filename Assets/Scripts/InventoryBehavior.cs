@@ -95,7 +95,6 @@ public class InventoryBehavior : MonoBehaviour
     GUI.Label(new Rect(20, 300, 150, 25), "Inventory");
     foreach (KeyValuePair<string, uint> entry in Items)
     {
-      Debug.Log("printing value");
       GUI.Label(new Rect(20, 300 + i * 15, 150, 25), entry.Key + ": " + entry.Value);
       i++;
     }

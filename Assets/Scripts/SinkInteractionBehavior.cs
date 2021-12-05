@@ -9,12 +9,13 @@ public class SinkInteractionBehavior : MonoBehaviour
   public LayerMask layerMask;
   private string guiText;
   private int timer = 0;
-  public GameObject Inventory;
-  public GameBehavior gameManager;
+  private InventoryBehavior Inventory;
+  private GameBehavior gameManager;
   // Start is called before the first frame update
   void Start()
   {
     gameManager = GameObject.Find("GameManager").GetComponent<GameBehavior>();
+    Inventory = GameObject.Find("PlayerGroupNew").GetComponent<InventoryBehavior>();
   }
 
   // Update is called once per frame
@@ -31,17 +32,18 @@ public class SinkInteractionBehavior : MonoBehaviour
         if (Input.GetKey(KeyCode.E))
         {
           timer += 1;
-          gameManager.Level1Goal = true;
+          //gameManager.Level1Goal = true;
         }
         else
           timer = 0;
 
         if (timer == 200)
         {
-          Inventory.GetComponent<InventoryBehavior>().CleanItems();
+          Debug.Log("Cleaning items");
+          Inventory.CleanItems();
         }
 
-        guiText = "Hold E to open clean your items";
+        guiText = "Hold E to clean your items";
 
       }
       else
