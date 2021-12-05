@@ -59,6 +59,6 @@ public class SinkInteractionBehavior : MonoBehaviour
 
   private void OnGUI()
   {
-    GUI.Box(new Rect(20, 150, 150, 25), guiText);
+    GUI.Box(new Rect(20, 250, 150, 25), guiText);
   }
 }

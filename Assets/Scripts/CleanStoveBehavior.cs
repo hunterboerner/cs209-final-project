@@ -40,7 +40,9 @@ public class CleanStoveBehavior : MonoBehaviour
 
           if (timer == 200)
           {
+            Debug.Log("Cleaning the stove!");
             hitItem.CleanStove();
+            timer = 0;
           }
 
           guiText = "Hold Q to clean stove";

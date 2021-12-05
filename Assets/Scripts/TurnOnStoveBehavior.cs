@@ -19,8 +19,9 @@ public class TurnOnStoveBehavior : MonoBehaviour
   void Update()
   {
     Ray ray = Camera.ViewportPointToRay(Vector3.one / 2f);
-    Debug.DrawRay(ray.origin, ray.direction * 2f, Color.red);
+    Debug.DrawRay(ray.origin, ray.direction * 2f, Color.green);
     RaycastHit hitInfo;
+    Debug.DrawRay(transform.position, transform.forward, Color.green);
     if (Physics.Raycast(ray, out hitInfo, 2f, layerMask))
     {
       StoveBehavior hitItem = hitInfo.collider.GetComponent<StoveBehavior>();

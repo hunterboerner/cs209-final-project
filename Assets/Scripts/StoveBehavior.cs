@@ -29,7 +29,7 @@ public class StoveBehavior : MonoBehaviour
   public void TurnOnStove()
   {
     isOn = true;
-    if (dirtyLevel > 5)
+    if (dirtyLevel >= 5)
       Fire.GetComponent<FireBehavior>().turnOn();
   }
 

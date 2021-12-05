@@ -5892,6 +5892,10 @@ GameObject:
   - component: {fileID: 1370616867}
   - component: {fileID: 1370616866}
   - component: {fileID: 1370616865}
+  - component: {fileID: 1370616871}
+  - component: {fileID: 1370616870}
+  - component: {fileID: 1370616869}
+  - component: {fileID: 1370616868}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -5978,6 +5982,71 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1370616868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370616863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fce688dc15b31420c9c52ea08c60287c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Camera: {fileID: 1370616867}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  Inventory: {fileID: 0}
+--- !u!114 &1370616869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370616863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29a63c495ee774336a60cef47de07e54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Camera: {fileID: 1370616867}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 128
+--- !u!114 &1370616870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370616863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8803c17a494524567923288280a589eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Camera: {fileID: 1370616867}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!114 &1370616871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370616863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fd0aa1368aec40589ed5882e4d5f00b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Camera: {fileID: 1370616867}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &1452641340
 GameObject:
   m_ObjectHideFlags: 0
@@ -6397,6 +6466,7 @@ GameObject:
   - component: {fileID: 1874968131}
   - component: {fileID: 1874968130}
   - component: {fileID: 1874968129}
+  - component: {fileID: 1874968136}
   m_Layer: 0
   m_Name: PlayerGroupNew
   m_TagString: Untagged
@@ -6411,7 +6481,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1874968128}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 543ad283c8afc4bc1abceab11b1e7e6a, type: 3}
   m_Name: 
@@ -6437,7 +6507,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1874968128}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fce688dc15b31420c9c52ea08c60287c, type: 3}
   m_Name: 
@@ -6454,12 +6524,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1874968128}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29a63c495ee774336a60cef47de07e54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Camera: {fileID: 0}
+  Camera: {fileID: 1370616867}
   layerMask:
     serializedVersion: 2
     m_Bits: 0
@@ -6470,7 +6540,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1874968128}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6fd0aa1368aec40589ed5882e4d5f00b, type: 3}
   m_Name: 
@@ -6513,6 +6583,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1874968136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1874968128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae45baad21ed74571b13598c589f16bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Camera: {fileID: 0}
+  layerMask:
+    m_Bits: 0
+  guiText: 
+  timer: 0
 --- !u!1 &1984921850
 GameObject:
   m_ObjectHideFlags: 0
