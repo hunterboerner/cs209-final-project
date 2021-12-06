@@ -32,7 +32,7 @@ public class SinkInteractionBehavior : MonoBehaviour
         if (Input.GetKey(KeyCode.E))
         {
           timer += 1;
-          //gameManager.Level1Goal = true;
+          gameManager.SinkOn = true;
         }
         else
           timer = 0;
@@ -61,6 +61,8 @@ public class SinkInteractionBehavior : MonoBehaviour
 
   private void OnGUI()
   {
-    GUI.Box(new Rect(20, 250, 150, 25), guiText);
+    GUI.Box(new Rect(Screen.width/2 - 100, 
+      Screen.height/2 - 50, 
+      150, 25), guiText);
   }
 }

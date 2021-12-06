@@ -8,9 +8,11 @@ public class InventoryBehavior : MonoBehaviour
   public uint numSpatula = 1;
   public uint numEggs = 3;
   public uint numBowl = 1;
+  private GameBehavior gameManager;
   // Start is called before the first frame update
   void Start()
   {
+    gameManager = GameObject.Find("GameManager").GetComponent<GameBehavior>();
     Items = new Dictionary<string, uint>();
     Items["Bowl"] = numBowl;
     Items["Eggs"] = numEggs;
@@ -60,6 +62,11 @@ public class InventoryBehavior : MonoBehaviour
     {
       Items["Bowl"] = 1;
       Items.Remove("DirtyBowl");
+    }
+    if (Items.ContainsKey("Bowl") &&
+      Items.ContainsKey("Spatula")) 
+    {
+      gameManager.DishesClean = true;
     }
   }
 
