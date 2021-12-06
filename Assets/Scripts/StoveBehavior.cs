@@ -27,8 +27,10 @@ public class StoveBehavior : MonoBehaviour
     if (dirtyLevel != 0)
       dirtyLevel--;
     else {
-      gameManager.StoveClean = true;
-      gameManager.Score+= 20;
+      if (!gameManager.StoveClean) {
+        gameManager.StoveClean = true;
+        gameManager.Score+= 20;
+      }
     }
   }
 

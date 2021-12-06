@@ -11,6 +11,8 @@ public class TurnOnStoveBehavior : MonoBehaviour
   private string guiText2;
   private int timer = 0;
   private int timer2 = 0;
+  private bool showText = false;
+  private bool showCookPrompt = false;
   private InventoryBehavior Inventory;
   // Start is called before the first frame update
   void Start()
@@ -29,6 +31,7 @@ public class TurnOnStoveBehavior : MonoBehaviour
       StoveBehavior hitItem = hitInfo.collider.GetComponent<StoveBehavior>();
       if (hitItem != null)
       {
+        showText = true;
         if (hitItem.isOn)
         {
           if (Input.GetKey(KeyCode.E))
@@ -49,11 +52,14 @@ public class TurnOnStoveBehavior : MonoBehaviour
           if (timer2 == 200)
           {
             Inventory.CookEggs();
+            showCookPrompt = false;
           }
           guiText = "Hold E to turn off the stove";
 
-          if (Inventory.CanCookEggs())
-            guiText2 = "Hole C to cook eggs";
+          if (Inventory.CanCookEggs()) {
+            guiText2 = "Hold C to cook eggs";
+            showCookPrompt = true;
+          }
           else
             guiText2 = "";
         }
@@ -71,6 +77,7 @@ public class TurnOnStoveBehavior : MonoBehaviour
 
           guiText = "Hold E to turn on the stove";
           guiText2 = "";
+          showCookPrompt = false;
         }
 
       }
@@ -78,6 +85,7 @@ public class TurnOnStoveBehavior : MonoBehaviour
       {
         guiText = "";
         guiText2 = "";
+        showText = false;
         timer = 0;
         timer2 = 0;
       }
@@ -86,6 +94,7 @@ public class TurnOnStoveBehavior : MonoBehaviour
     {
       guiText = "";
       guiText2 = "";
+      showText = false;
       timer = 0;
       timer2 = 0;
     }
@@ -93,7 +102,15 @@ public class TurnOnStoveBehavior : MonoBehaviour
 
   private void OnGUI()
   {
-    GUI.Box(new Rect(20, 150, 150, 25), guiText);
-    GUI.Box(new Rect(20, 165, 150, 25), guiText2);
+    if (showText) {
+      GUI.Box(new Rect(Screen.width/2 - 100, 
+        Screen.height/2 - 50, 
+        200, 25), guiText);
+      if (showCookPrompt) {
+        GUI.Box(new Rect(Screen.width/2 - 100, 
+          Screen.height/2 - 80, 
+          200, 25), guiText2);
+      }
+    }
   }
 }

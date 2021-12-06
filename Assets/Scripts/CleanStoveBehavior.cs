@@ -9,6 +9,7 @@ public class CleanStoveBehavior : MonoBehaviour
   public LayerMask layerMask;
   private string guiText;
   private int timer = 0;
+  private bool showText = false;
   // Start is called before the first frame update
   void Start()
   {
@@ -28,11 +29,11 @@ public class CleanStoveBehavior : MonoBehaviour
       {
         if (hitItem.isOn)
         {
-          // TODO This is a lose condition
           guiText = "Hold Q to clean stove";
         }
         else
         {
+          showText = true;
           if (Input.GetKey(KeyCode.Q))
             timer += 1;
           else
@@ -52,18 +53,24 @@ public class CleanStoveBehavior : MonoBehaviour
       else
       {
         guiText = "";
+        showText = false;
         timer = 0;
       }
     }
     else
     {
       guiText = "";
+      showText = false;
       timer = 0;
     }
   }
 
   private void OnGUI()
   {
-    GUI.Box(new Rect(20, 200, 150, 25), guiText);
+    if (showText) {
+      GUI.Box(new Rect(Screen.width/2 - 100, 
+        Screen.height/2 - 20, 
+        150, 25), guiText);
+    }
   }
 }

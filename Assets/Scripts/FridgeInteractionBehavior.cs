@@ -10,6 +10,7 @@ public class FridgeInteractionBehavior : MonoBehaviour
   private string guiText;
   private int timer = 0;
   private InventoryBehavior Inventory;
+  private bool showText = false;
   // Start is called before the first frame update
   void Start()
   {
@@ -27,6 +28,7 @@ public class FridgeInteractionBehavior : MonoBehaviour
       FridgeBehavior hitItem = hitInfo.collider.GetComponent<FridgeBehavior>();
       if (hitItem != null)
       {
+        showText = true;
         if (Input.GetKey(KeyCode.E))
           timer += 1;
         else
@@ -43,18 +45,24 @@ public class FridgeInteractionBehavior : MonoBehaviour
       else
       {
         guiText = "";
+        showText = false;
         timer = 0;
       }
     }
     else
     {
       guiText = "";
+      showText = false;
       timer = 0;
     }
   }
 
   private void OnGUI()
   {
-    GUI.Box(new Rect(20, 300, 150, 25), guiText);
+    if (showText) {
+      GUI.Box(new Rect(Screen.width/2 - 100, 
+        Screen.height/2 - 50, 
+        300, 25), guiText);
+    }
   }
 }

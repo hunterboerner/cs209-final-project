@@ -92,6 +92,7 @@ public class GameBehavior : MonoBehaviour
 
         if (showWinScreen)
         {
+            Cursor.lockState = CursorLockMode.None;
             if (GUI.Button(new Rect(Screen.width/2 - 100,
                 Screen.height/2 - 50, 200, 100), "WIN (Click to restart)"))
             {
@@ -100,6 +101,7 @@ public class GameBehavior : MonoBehaviour
         }
         if (showLoseScreen)
         {
+            Cursor.lockState = CursorLockMode.None;
             if (GUI.Button(new Rect(Screen.width/2 - 100,
                 Screen.height/2 - 50, 200, 100), "LOSE (Click to restart)"))
             {

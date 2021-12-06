@@ -6498,9 +6498,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915cce55c2bcb4893838ecb6b202801b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numSpatula: 1
-  numEggs: 3
-  numBowl: 1
+  numSpatula: 0
+  numEggs: 0
+  numBowl: 0
+  numDirtyBowl: 1
+  numDirtySpatula: 1
 --- !u!114 &1874968131
 MonoBehaviour:
   m_ObjectHideFlags: 0

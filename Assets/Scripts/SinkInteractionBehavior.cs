@@ -30,24 +30,25 @@ public class SinkInteractionBehavior : MonoBehaviour
       SinkBehavior hitItem = hitInfo.collider.GetComponent<SinkBehavior>();
       if (hitItem != null)
       {
+        showText = true;
         if (Input.GetKey(KeyCode.E))
         {
           timer += 1;
-          gameManager.SinkOn = true;
-          gameManager.Score+= 10;
+          if (!gameManager.SinkOn) {
+            gameManager.SinkOn = true;
+            gameManager.Score+= 10;
+          }
         }
         else
           timer = 0;
 
-        if (timer == 200)
+        if (timer == 500)
         {
           Debug.Log("Cleaning items");
           Inventory.CleanItems();
         }
 
         guiText = "Hold E to clean your items";
-        showText = true;
-
       }
       else
       {
@@ -69,7 +70,7 @@ public class SinkInteractionBehavior : MonoBehaviour
     if (showText) {
       GUI.Box(new Rect(Screen.width/2 - 100, 
         Screen.height/2 - 50, 
-        150, 25), guiText);
+        200, 25), guiText);
     }
   }
 }

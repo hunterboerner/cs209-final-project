@@ -5,9 +5,11 @@ using UnityEngine;
 public class InventoryBehavior : MonoBehaviour
 {
   public Dictionary<string, uint> Items;
-  public uint numSpatula = 1;
-  public uint numEggs = 3;
-  public uint numBowl = 1;
+  public uint numSpatula = 0;
+  public uint numEggs = 0;
+  public uint numBowl = 0;
+  public uint numDirtyBowl = 1;
+  public uint numDirtySpatula = 1;
   private GameBehavior gameManager;
   // Start is called before the first frame update
   void Start()
@@ -17,6 +19,8 @@ public class InventoryBehavior : MonoBehaviour
     Items["Bowl"] = numBowl;
     Items["Eggs"] = numEggs;
     Items["Spatula"] = numSpatula;
+    Items["DirtyBowl"] = numDirtyBowl;
+    Items["DirtySpatula"] = numDirtySpatula;
   }
 
   public void AddItem(string key)
@@ -61,8 +65,10 @@ public class InventoryBehavior : MonoBehaviour
     if (Items.ContainsKey("Bowl") &&
       Items.ContainsKey("Spatula")) 
     {
-      gameManager.DishesClean = true;
-      gameManager.Score+= 20;
+      if (!gameManager.DishesClean) {
+        gameManager.DishesClean = true;
+        gameManager.Score+= 20;
+      }
     }
   }
 
@@ -103,8 +109,10 @@ public class InventoryBehavior : MonoBehaviour
     GUI.Label(new Rect(20, 300, 150, 25), "Inventory");
     foreach (KeyValuePair<string, uint> entry in Items)
     {
-      GUI.Label(new Rect(20, 300 + i * 15, 150, 25), entry.Key + ": " + entry.Value);
-      i++;
+      if (entry.Value != 0) {
+        GUI.Label(new Rect(20, 300 + i * 15, 150, 100), entry.Key + ": " + entry.Value);
+        i++;
+      }
     }
   }
 }
