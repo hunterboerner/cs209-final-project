@@ -8,6 +8,7 @@ public class SinkInteractionBehavior : MonoBehaviour
   public Camera Camera;
   public LayerMask layerMask;
   private string guiText;
+  private bool showText = false;
   private int timer = 0;
   private InventoryBehavior Inventory;
   private GameBehavior gameManager;
@@ -45,25 +46,30 @@ public class SinkInteractionBehavior : MonoBehaviour
         }
 
         guiText = "Hold E to clean your items";
+        showText = true;
 
       }
       else
       {
         guiText = "";
+        showText = false;
         timer = 0;
       }
     }
     else
     {
       guiText = "";
+      showText = false;
       timer = 0;
     }
   }
 
   private void OnGUI()
   {
-    GUI.Box(new Rect(Screen.width/2 - 100, 
-      Screen.height/2 - 50, 
-      150, 25), guiText);
+    if (showText) {
+      GUI.Box(new Rect(Screen.width/2 - 100, 
+        Screen.height/2 - 50, 
+        150, 25), guiText);
+    }
   }
 }
