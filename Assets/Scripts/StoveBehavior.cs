@@ -26,8 +26,10 @@ public class StoveBehavior : MonoBehaviour
   {
     if (dirtyLevel != 0)
       dirtyLevel--;
-    else
+    else {
       gameManager.StoveClean = true;
+      gameManager.Score+= 20;
+    }
   }
 
   public void TurnOnStove()

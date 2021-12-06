@@ -67,6 +67,7 @@ public class InventoryBehavior : MonoBehaviour
       Items.ContainsKey("Spatula")) 
     {
       gameManager.DishesClean = true;
+      gameManager.Score+= 20;
     }
   }
 

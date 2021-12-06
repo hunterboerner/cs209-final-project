@@ -33,6 +33,7 @@ public class SinkInteractionBehavior : MonoBehaviour
         {
           timer += 1;
           gameManager.SinkOn = true;
+          gameManager.Score+= 10;
         }
         else
           timer = 0;
