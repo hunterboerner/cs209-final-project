@@ -6460,9 +6460,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1874968135}
   - component: {fileID: 1874968134}
-  - component: {fileID: 1874968133}
-  - component: {fileID: 1874968132}
-  - component: {fileID: 1874968131}
   - component: {fileID: 1874968130}
   - component: {fileID: 1874968129}
   m_Layer: 0
@@ -6501,56 +6498,8 @@ MonoBehaviour:
   numSpatula: 0
   numEggs: 0
   numBowl: 0
-  numDirtyBowl: 1
-  numDirtySpatula: 1
---- !u!114 &1874968131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1874968128}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fce688dc15b31420c9c52ea08c60287c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Camera: {fileID: 0}
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 0
---- !u!114 &1874968132
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1874968128}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29a63c495ee774336a60cef47de07e54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Camera: {fileID: 1370616867}
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 0
---- !u!114 &1874968133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1874968128}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fd0aa1368aec40589ed5882e4d5f00b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Camera: {fileID: 0}
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 0
+  numDirtyBowl: 0
+  numDirtySpatula: 0
 --- !u!143 &1874968134
 CharacterController:
   m_ObjectHideFlags: 0
